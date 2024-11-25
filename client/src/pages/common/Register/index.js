@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../../apicalls/users";
 import { HideLoading, ShowLoading } from "../../../redux/loaderSlice";
-
+import ParticlesBackground from "../../../components/ParticlesBackground";
 function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -27,8 +27,11 @@ function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen w-screen bg-primary"
-    style={{ backgroundImage: 'url(https://www.engroenergy.com/app/media/2022/08/EPQL-min.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <ParticlesBackground>
+    <div
+        className="flex justify-center items-center h-screen"
+        style={{ position: "relative", zIndex: 1 }}
+    >
       <div className="card w-400 p-3 bg-white"
       style={{borderRadius: '20px' }}>
         <div className="flex flex-col">
@@ -60,6 +63,7 @@ function Register() {
         </div>
       </div>
     </div>
+    </ParticlesBackground>
   );
 }
 
